@@ -1,0 +1,488 @@
+{
+  "api": {
+    "heavenlymatch": {
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    },
+    "moderationNotifier": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "moderationNotifierHM"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "notifications": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "handleNotifications"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "stripePayments": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "stripePayments"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "twilio": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getTwilioToken"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "heavenlymatchwebcaf42ae7": {
+      "customAuth": false,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7CreateAuthChallenge",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7DefineAuthChallenge",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7VerifyAuthChallengeResponse",
+          "triggerProvider": "Cognito"
+        }
+      ],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OPTIONAL",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL",
+          "NAME",
+          "PHONE_NUMBER"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "heavenlymatchwebcaf42ae7"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
+    }
+  },
+  "function": {
+    "getTwilioToken": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "handleNotifications": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput"
+          ],
+          "category": "api",
+          "resourceName": "heavenlymatch"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "heavenlymatchwebcaf42ae7CreateAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "heavenlymatchwebcaf42ae7DefineAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "heavenlymatchwebcaf42ae7VerifyAuthChallengeResponse": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "moderationNotifierHM": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput"
+          ],
+          "category": "api",
+          "resourceName": "heavenlymatch"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "stripePayments": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput"
+          ],
+          "category": "api",
+          "resourceName": "heavenlymatch"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_getTwilioToken_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getTwilioToken"
+        }
+      ]
+    },
+    "AMPLIFY_function_getTwilioToken_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getTwilioToken"
+        }
+      ]
+    },
+    "AMPLIFY_function_getTwilioToken_twilioAccountSid": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getTwilioToken"
+        }
+      ]
+    },
+    "AMPLIFY_function_getTwilioToken_twilioApiKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getTwilioToken"
+        }
+      ]
+    },
+    "AMPLIFY_function_getTwilioToken_twilioApiSecret": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getTwilioToken"
+        }
+      ]
+    },
+    "AMPLIFY_function_getTwilioToken_twilioAuthToken": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getTwilioToken"
+        }
+      ]
+    },
+    "AMPLIFY_function_getTwilioToken_twilioChatServiceSid": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getTwilioToken"
+        }
+      ]
+    },
+    "AMPLIFY_function_handleNotifications_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "handleNotifications"
+        }
+      ]
+    },
+    "AMPLIFY_function_handleNotifications_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "handleNotifications"
+        }
+      ]
+    },
+    "AMPLIFY_function_heavenlymatchwebcaf42ae7CreateAuthChallenge_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7CreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_heavenlymatchwebcaf42ae7CreateAuthChallenge_messageServiceSid": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7CreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_heavenlymatchwebcaf42ae7CreateAuthChallenge_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7CreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_heavenlymatchwebcaf42ae7CreateAuthChallenge_sesAccessKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7CreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_heavenlymatchwebcaf42ae7CreateAuthChallenge_sesSecretKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7CreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_heavenlymatchwebcaf42ae7CreateAuthChallenge_sesSenderEmail": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7CreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_heavenlymatchwebcaf42ae7CreateAuthChallenge_twilioAccountSid": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7CreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_heavenlymatchwebcaf42ae7CreateAuthChallenge_twilioAuthToken": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7CreateAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_heavenlymatchwebcaf42ae7DefineAuthChallenge_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7DefineAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_heavenlymatchwebcaf42ae7DefineAuthChallenge_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7DefineAuthChallenge"
+        }
+      ]
+    },
+    "AMPLIFY_function_heavenlymatchwebcaf42ae7VerifyAuthChallengeResponse_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7VerifyAuthChallengeResponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_heavenlymatchwebcaf42ae7VerifyAuthChallengeResponse_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "heavenlymatchwebcaf42ae7VerifyAuthChallengeResponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_moderationNotifierHM_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "moderationNotifierHM"
+        }
+      ]
+    },
+    "AMPLIFY_function_moderationNotifierHM_hostUrl": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "moderationNotifierHM"
+        }
+      ]
+    },
+    "AMPLIFY_function_moderationNotifierHM_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "moderationNotifierHM"
+        }
+      ]
+    },
+    "AMPLIFY_function_moderationNotifierHM_sesPublicKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "moderationNotifierHM"
+        }
+      ]
+    },
+    "AMPLIFY_function_moderationNotifierHM_sesSecretKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "moderationNotifierHM"
+        }
+      ]
+    },
+    "AMPLIFY_function_moderationNotifierHM_sesSenderEmail": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "moderationNotifierHM"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripePayments_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripePayments"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripePayments_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripePayments"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripePayments_sesPublicKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripePayments"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripePayments_sesSecretKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripePayments"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripePayments_sesSenderEmail": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripePayments"
+        }
+      ]
+    },
+    "AMPLIFY_function_stripePayments_stripeSecretKey": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "stripePayments"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "heavenlyMatchStorage": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
+  }
+}

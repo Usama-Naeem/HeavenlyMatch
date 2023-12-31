@@ -1,0 +1,12 @@
+{
+  "httpMethod": "POST",
+  "path": "/sendEmailNotification",
+  "queryStringParameters": {
+    "name": "Amir",
+    "action": "send"
+  },
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"email\":\"ali.butt+male@emerald-labs.com\",\"name\":\"Nauman Kabir\",\"action\":\"newProfile\"}"
+}

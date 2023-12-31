@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "paths": {
+    "/fcmToken": {
+      "name": "/fcmToken",
+      "lambdaFunction": "handleNotifications",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/sendNotification": {
+      "name": "/sendNotification",
+      "lambdaFunction": "handleNotifications",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/clearNotifications": {
+      "name": "/clearNotifications",
+      "lambdaFunction": "handleNotifications",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/deleteFcmToken": {
+      "name": "/deleteFcmToken",
+      "lambdaFunction": "handleNotifications",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/sendAnnouncements": {
+      "name": "/sendAnnouncements",
+      "lambdaFunction": "handleNotifications",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "httpMethod": "PUT",
+  "path": "/paySubscription",
+  "queryStringParameters": {
+    "userId": "9f7bac3a-f448-41f2-a47d-4a732e1b1abf",
+    "amount": "520",
+    "redirectUrl": "",
+    "membershipChange": false
+  },
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"msg\":\"Hello from the event.json body\"}"
+}

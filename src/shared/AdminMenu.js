@@ -1,0 +1,170 @@
+import {
+  ANALYTICS,
+  ANNOUNCEMENT,
+  APP_SETTINGS,
+  CANDIDATE_MANAGEMENT,
+  MY_PROFILE,
+  PAYMENTS,
+  TEAM_MANAGEMENT,
+  GALLERY,
+  WORK,
+  FAMILY,
+  EDUCATION,
+  MARITAL_STATUS,
+  LIVING,
+  RELIGION,
+  LIFE_STYLE,
+  PERSONALITY_INTERESTS,
+  LOOKING_FOR,
+  PAYMENT,
+  MATCHES,
+  SIDEBAR_ABOUT_ME,
+} from './routes';
+
+import {
+  TeamOutlined,
+  SmileOutlined,
+  MoneyCollectOutlined,
+  LineChartOutlined,
+  SoundOutlined,
+  ControlOutlined,
+  UserOutlined,
+  PictureOutlined,
+  HeartOutlined,
+  FolderOutlined,
+  UsergroupAddOutlined,
+  ReadOutlined,
+  HomeOutlined,
+  TrophyOutlined,
+  SearchOutlined,
+  DollarOutlined,
+  SwitcherOutlined,
+} from '@ant-design/icons';
+
+import { ReactComponent as Mosque } from '../assets/mosque.svg';
+
+export const AdminMenu = {
+  CANDIDATE_MANAGEMENT: {
+    key: 'candidate-management',
+    icon: <SmileOutlined />,
+    route: CANDIDATE_MANAGEMENT,
+    name: 'Candidate Management',
+  },
+  TEAM_MANAGEMENT: {
+    key: 'team-management',
+    icon: <TeamOutlined />,
+    route: TEAM_MANAGEMENT,
+    name: 'Team Management',
+  },
+  PAYMENTS: {
+    key: 'payments',
+    icon: <MoneyCollectOutlined />,
+    route: PAYMENTS,
+    name: 'Payments',
+  },
+  ANALYTICS: {
+    key: 'analytics',
+    icon: <LineChartOutlined />,
+    route: ANALYTICS,
+    name: 'Analytics',
+  },
+  ANNOUNCEMENT: {
+    key: 'announcement',
+    icon: <SoundOutlined />,
+    route: ANNOUNCEMENT,
+    name: 'Announcement',
+  },
+  APP_SETTINGS: {
+    key: 'app-settings',
+    icon: <ControlOutlined />,
+    route: APP_SETTINGS,
+    name: 'App Settings',
+  },
+  MY_PROFILE: {
+    key: 'my-profile',
+    icon: <UserOutlined />,
+    route: MY_PROFILE,
+    name: 'My Profile',
+  },
+};
+
+export const CandidateMenu = {
+  ABOUT_ME: {
+    key: 'candidate-about-me',
+    icon: <UserOutlined />,
+    route: SIDEBAR_ABOUT_ME,
+    name: 'About Me',
+  },
+  GALLERY: {
+    key: 'candidate-gallery',
+    icon: <PictureOutlined />,
+    route: GALLERY,
+    name: 'Gallery',
+  },
+  WORK: {
+    key: 'candidate-work',
+    icon: <FolderOutlined />,
+    route: WORK,
+    name: 'Work',
+  },
+  FAMILY: {
+    key: 'candidate-family',
+    icon: <HeartOutlined />,
+    route: FAMILY,
+    name: 'Family',
+  },
+  EDUCATION: {
+    key: 'candidate-education',
+    icon: <ReadOutlined />,
+    route: EDUCATION,
+    name: 'Education',
+  },
+  MARITAL_STATUS: {
+    key: 'candidate-marital-status',
+    icon: <UsergroupAddOutlined />,
+    route: MARITAL_STATUS,
+    name: 'Marital Status',
+  },
+  LIVING: {
+    key: 'candidate-living',
+    icon: <HomeOutlined />,
+    route: LIVING,
+    name: 'Living',
+  },
+  RELIGION: {
+    key: 'candidate-religion',
+    icon: <Mosque />,
+    route: RELIGION,
+    name: 'Religion',
+  },
+  LIFE_STYLE: {
+    key: 'candidate-life-style',
+    icon: <TrophyOutlined />,
+    route: LIFE_STYLE,
+    name: 'Life Style',
+  },
+  PERSONALITY_INTERESTS: {
+    key: 'candidate-personality-interests',
+    icon: <SmileOutlined />,
+    route: PERSONALITY_INTERESTS,
+    name: 'Personality and Interests',
+  },
+  LOOKING_FOR: {
+    key: 'candidate-looking-for',
+    icon: <SearchOutlined />,
+    route: LOOKING_FOR,
+    name: "Whom I'm Looking For",
+  },
+  PAYMENT: {
+    key: 'candidate-payment',
+    icon: <DollarOutlined />,
+    route: PAYMENT,
+    name: 'Payment',
+  },
+  MATCHES: {
+    key: 'candidate-matches',
+    icon: <SwitcherOutlined />,
+    route: MATCHES,
+    name: 'Matches',
+  },
+};

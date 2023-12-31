@@ -1,0 +1,18 @@
+name: Heavenly Match Web - Cypress Sanity Tests
+on:
+  push:
+    branches:
+      - develop
+jobs:
+  test:
+    name: Run Cypress Tests via Github Actions
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: npm ci
+      - run: npm install cypress --save-dev
+      - run: npx cypress run --record --browser chrome --headless --key 24f6155f-30a3-41d0-b825-e1ae9c5bf4d0

@@ -1,0 +1,43 @@
+{
+  "trigger": true,
+  "modules": [
+    "boilerplate-create-challenge"
+  ],
+  "parentResource": "heavenlymatchwebcaf42ae7",
+  "functionName": "heavenlymatchwebcaf42ae7CreateAuthChallenge",
+  "resourceName": "heavenlymatchwebcaf42ae7CreateAuthChallenge",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "/snapshot/repo/build/node_modules/@aws-amplify/amplify-category-auth/provider-utils/awscloudformation/triggers/CreateAuthChallenge",
+  "triggerTemplate": "CreateAuthChallenge.json.ejs",
+  "triggerEventPath": "CreateAuthChallenge.event.json",
+  "roleName": "heavenlymatchwebcaf42ae7CreateAuthChallenge",
+  "skipEdit": true,
+  "enableCors": false,
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "sesAccessKey",
+      "environmentVariableName": "SES_ACCESS_KEY"
+    },
+    {
+      "cloudFormationParameterName": "sesSecretKey",
+      "environmentVariableName": "SES_SECRET_KEY"
+    },
+    {
+      "cloudFormationParameterName": "twilioAuthToken",
+      "environmentVariableName": "TWILIO_AUTH_TOKEN"
+    },
+    {
+      "cloudFormationParameterName": "twilioAccountSid",
+      "environmentVariableName": "TWILIO_ACCOUNT_SID"
+    },
+    {
+      "cloudFormationParameterName": "messageServiceSid",
+      "environmentVariableName": "MESSAGE_SERVICE_SID"
+    },
+    {
+      "cloudFormationParameterName": "sesSenderEmail",
+      "environmentVariableName": "SES_SENDER_EMAIL"
+    }
+  ]
+}

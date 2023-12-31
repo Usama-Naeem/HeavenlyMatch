@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/sendEmailNotification": {
+      "name": "/sendEmailNotification",
+      "lambdaFunction": "moderationNotifierHM",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

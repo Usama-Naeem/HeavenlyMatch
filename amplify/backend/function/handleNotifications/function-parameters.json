@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "storage": {
+      "HeavenlymatchFCMToken:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "HeavenlymatchNotification:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

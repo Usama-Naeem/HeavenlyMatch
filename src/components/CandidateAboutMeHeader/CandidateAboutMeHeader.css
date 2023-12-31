@@ -1,0 +1,23 @@
+#selectorDiv > div > .ant-select-selector:hover, .ant-select-selector:focus-within {
+  border: 1px solid #c48f97 !important;
+}
+
+#switchDiv > p > .ant-switch.ant-switch-checked{
+  background: #CC5869;
+}
+
+#switchDiv > p > .ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled){
+  background: #CC5869;
+}
+
+#switchDiv > p > .ant-switch:hover:not(.ant-switch-disabled){
+ background: gray;
+}
+
+#switchDiv > p > .ant-switch{
+  background-color: gray;
+}
+
+#saveButton > button:hover{
+  background-color: #d27a85;
+}

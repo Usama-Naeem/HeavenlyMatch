@@ -1,0 +1,28 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "sesPublicKey",
+      "environmentVariableName": "SES_PUBLIC_KEY"
+    },
+    {
+      "cloudFormationParameterName": "sesSecretKey",
+      "environmentVariableName": "SES_SECRET_KEY"
+    },
+    {
+      "cloudFormationParameterName": "hostUrl",
+      "environmentVariableName": "HOST_URL"
+    },
+    {
+      "cloudFormationParameterName": "sesSenderEmail",
+      "environmentVariableName": "SES_SENDER_EMAIL"
+    }
+  ],
+  "permissions": {
+    "storage": {
+      "HeavenlymatchAdmin:@model(appsync)": [
+        "read"
+      ]
+    }
+  }
+}

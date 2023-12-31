@@ -1,0 +1,79 @@
+#candidateManagementTable
+  > div
+  > .ant-table-wrapper
+  > .ant-spin-nested-loading
+  > .ant-spin-container
+  .ant-pagination
+  a {
+  color: #cc5869;
+}
+
+#candidateManagementTable
+  > div
+  > .ant-table-wrapper
+  > .ant-spin-nested-loading
+  > .ant-spin-container
+  .ant-pagination
+  .ant-pagination-item-active {
+  border-color: #cc5869;
+}
+
+#candidateManagementTable > div > div > .ant-btn {
+  background-color: #cc5869;
+}
+
+#candidateManagementTable > div > div > .ant-btn:hover {
+  background-color: #cf808c;
+}
+
+#candidateManagementTable
+  > div
+  > div
+  > .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
+  border-color: #cc5869;
+}
+
+#candidateManagementTable
+  > div
+  > div
+  > .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):focus {
+  border-color: #cc5869;
+}
+
+#candidateManagementTable > div > div > .ant-input-affix-wrapper-focused {
+  border-color: #cc5869;
+}
+
+#candidateManagementTable > div > div > div > .ant-btn-primary:not(:disabled) {
+  background-color: #cc5869;
+}
+
+#candidateManagementTable
+  > div
+  > div
+  > div
+  > .ant-btn-primary:not(:disabled):hover {
+  background-color: #cf808c;
+}
+
+#candidateManagementTable
+  > div
+  > div
+  > div
+  > .ant-btn-default
+  .ant-btn-sm
+  .ant-btn:hover {
+  background-color: #cf808c;
+}
+
+#actionButtons > .ant-btn-primary:not(:disabled) {
+  background-color: #cc5869;
+}
+
+#actionButtons > .ant-btn-primary:not(:disabled):hover {
+  background-color: #cf808c;
+}
+
+#actionButtons .ant-btn-default .ant-btn-sm .ant-btn:hover {
+  background-color: #cf808c;
+}

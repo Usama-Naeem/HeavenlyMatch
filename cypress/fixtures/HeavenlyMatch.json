@@ -1,0 +1,24 @@
+
+[
+    
+    {
+        "Email": "bilal.ashraf@emerald-labs.com",
+        "Password": "12345678",
+        "Expected":"Candidate Management"
+    },
+    
+    {
+    
+        "Email": "bilal.ashraf@emerald-labs.com",
+        "Password": "1234567",
+        "Expected":"Incorrect username or password."
+    },
+
+    {
+    
+        "Email": "bilal.ashraf1-@emerald-labs.com",
+        "Password": "12345678",
+        "Expected":"User does not exist."
+    }
+
+] 

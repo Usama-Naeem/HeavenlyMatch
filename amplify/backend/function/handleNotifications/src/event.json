@@ -1,0 +1,8 @@
+{
+  "httpMethod": "POST",
+  "path": "/sendAnnouncements",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": "{\"title\":\"Testing Lambda\",\"body\":\"This is test body\",\"action\":\"announcement\",\"userId\":[\"5a02a1c1-1ec9-40b5-93a6-ef0e9cd3e896\",\"9518b98f-38fb-4460-945e-6712134416d2\",\"31e43a36-8c20-4033-8859-7fd9ea34e927\"]}"
+}

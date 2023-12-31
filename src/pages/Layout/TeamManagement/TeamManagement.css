@@ -1,0 +1,15 @@
+#navDiv > .ant-tabs > .ant-tabs-nav > .ant-tabs-nav-wrap > .ant-tabs-nav-list > .ant-tabs-tab.ant-tabs-tab-active > .ant-tabs-tab-btn  {
+  color: #CC5869;
+}
+
+#navDiv > .ant-tabs .ant-tabs-ink-bar {
+  background: #CC5869;
+}
+
+#navDiv > .ant-tabs .ant-tabs-tab:hover {
+  color: #CC5869;
+}
+
+#navDiv > .ant-tabs .ant-tabs-tab-btn:active {
+  color: #CC5869;
+}

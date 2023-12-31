@@ -1,0 +1,7 @@
+#candidateEditSaveButtons > .ant-btn-primary:not(:disabled):hover {
+  background-color: #c2727e;
+}
+
+#candidateEditSaveButtons > .ant-btn-primary{
+  border: 1px solid gray;
+}

@@ -1,0 +1,368 @@
+type HeavenlymatchAdmin
+  @model
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String!
+  username: String!
+  role: String
+  receiveEmails: Boolean
+  status: String
+  isArchive: Boolean
+  phoneNumber: String
+  type: String!
+    @index(
+      name: "heavenlymatchAdminsByDate"
+      queryField: "listHeavenlymatchAdminsByDate"
+      sortKeyFields: ["createdAt"]
+    )
+  createdAt: String!
+}
+
+type HeavenlymatchAnnouncements
+  @model
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  adminId: ID!
+  announcementsType: String
+  announcementsFor: String
+  announcementsText: String
+  type: String!
+    @index(
+      name: "heavenlymatchAnnouncementsByDate"
+      queryField: "listHeavenlymatchAnnouncementsByDate"
+      sortKeyFields: ["createdAt"]
+    )
+  createdAt: String!
+}
+
+type HeavenlymatchPaymentProcedures
+  @model
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  adminId: ID!
+  paymentMethod: String
+  type: String!
+    @index(
+      name: "heavenlymatchPaymentProceduresByDate"
+      queryField: "listHeavenlymatchPaymentProceduresByDate"
+      sortKeyFields: ["createdAt"]
+    )
+  createdAt: String!
+}
+
+enum genderEnum {
+  male
+  female
+}
+type HeavenlymatchUsers
+  @model
+  @searchable
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  middleName: String
+  username: String
+  displayName: String
+  email: String!
+  birthday: AWSDate!
+  gender: genderEnum
+  isPaid: Boolean
+  status: String
+  isArchive: Boolean
+  paymentExclusion: Boolean
+  phoneNumber: String
+  stripeCustomerId: String
+
+  education: String
+  currentDegree: String
+  expectedCompletionDateDegree: AWSDate
+  fieldOfStudy: String
+  schoolName: String
+
+  currentlyWorking: Boolean
+  occupation: String
+  companyName: String
+  designation: String
+  requireTravel: Boolean
+  travelForWork: String
+
+  brothersCount: Int
+  sistersCount: Int
+  syed: Boolean
+  haveSiblings: Boolean
+  motherName: String
+  fatherName: String
+
+  livingWith: String
+  haveDependents: Boolean
+  noDependent: Int
+  relocate: Boolean
+  maritalStatus: String
+
+  sect: String
+  pray: String
+  gotoMosque: String
+  hijabBeard: Boolean
+  hajj: Boolean
+
+  hangoutFriends: String
+  doCooking: String
+  watchingTv: String
+  playVideoGames: String
+  exercise: String
+  smoking: String
+
+  drinking: Boolean
+  consumeHalal: Boolean
+
+  personality: String
+  sports: Boolean
+  movies: Boolean
+  adrenalineJunkie: Boolean
+  isModalShown: Boolean
+
+  userOldBio: String
+  userNewBio: String
+  bioApproved: String @default(value: "")
+
+  imagesApproved: String @default(value: "")
+
+  isNewProfile: Boolean @default(value: "true")
+  newProfileApproved: String @default(value: "")
+
+  moderationType: String
+  imageModerationType: String
+  bioModerationType: String
+
+  isReported: Boolean @default(value: "false")
+
+  generalInfoId: ID
+  userGeneralInfo: HeavenlymatchUserGeneralInfo
+    @hasOne(fields: ["generalInfoId"])
+  userMediaFiles: [HeavenlymatchUserMediaFiles]
+    @hasMany(indexName: "byMedia", fields: ["id"])
+  userFeedbacks: [HeavenlymatchFeedbacks]
+    @hasMany(indexName: "byFeebacks", fields: ["id"])
+  lookingForId: ID
+  userLookingFor: HeavenlymatchUserLookingFor @hasOne(fields: ["lookingForId"])
+  paymentId: ID
+  userPayments: HeavenlymatchPayments @hasOne(fields: ["paymentId"])
+  type: String!
+    @index(
+      name: "heavenlymatchUsersByDate"
+      queryField: "listHeavenlymatchUsersByDate"
+      sortKeyFields: ["updatedAt"]
+    )
+  createdAt: String!
+  updatedAt: String!
+}
+
+type HeavenlymatchUserGeneralInfo
+  @model
+  @searchable
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  phoneContact: String
+  height: String
+  ethnicity: String
+  residenceCountry: String
+  birthCountry: String
+  state: String
+  city: String
+  visaStatus: String
+}
+
+type HeavenlymatchUserMediaFiles
+  @model
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  userId: ID! @index(name: "byMedia", sortKeyFields: ["createdAt"])
+  file: String
+  type: String
+  cover: Boolean
+  private: Boolean
+  accessTo: String
+  replacedKey: String
+  approved: String @default(value: "")
+  createdAt: String!
+}
+
+type HeavenlymatchPayments
+  @model
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  paymentType: String
+  paymentStatus: String
+  paymentAmount: String
+  stripeInvoiceId: String
+  type: String!
+    @index(
+      name: "heavenlymatchPaymentsByDate"
+      queryField: "listHeavenlymatchPaymentsByDate"
+      sortKeyFields: ["createdAt"]
+    )
+  createdAt: String!
+}
+
+type HeavenlymatchFeedbacks
+  @model
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  userId: ID! @index(name: "byFeebacks")
+  feedback: String
+  type: String!
+    @index(
+      name: "heavenlymatchFeedbacksByDate"
+      queryField: "listHeavenlymatchFeedbacksByDate"
+      sortKeyFields: ["createdAt"]
+    )
+  createdAt: String!
+}
+
+type HeavenlymatchUserLookingFor
+  @model
+  @searchable
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  age: String
+  ethnicity: String
+  education: String
+  hijabBeard: Boolean
+  consumeHalal: Boolean
+  drinking: Boolean
+  pray: Boolean
+}
+
+type HeavenlymatchMatches
+  @model
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  requestedFromId: ID
+  requestedToId: ID
+  status: String
+  bookMarked: Boolean
+}
+
+type HeavenlymatchUserReports
+  @model
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  reportedUserId: ID
+  reportedUser: HeavenlymatchUsers @hasOne(fields: ["reportedUserId"])
+  reportedByUserId: ID
+  reportedByUser: HeavenlymatchUsers @hasOne(fields: ["reportedByUserId"])
+  reportedReason: String
+  type: String!
+    @index(
+      name: "heavenlymatchUserReportsByDate"
+      queryField: "listHeavenlymatchUserReportsByDate"
+      sortKeyFields: ["createdAt"]
+    )
+  createdAt: String!
+}
+
+type HeavenlymatchHiddenProfiles
+  @model
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  hiddenById: ID
+  hiddenId: ID
+}
+
+type HeavenlymatchUserAppSettings
+  @model
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  minAge: Int
+  maxAge: Int
+  pictureCount: Int
+  pictureSize: Int
+  pictureExtension: String
+  intrests: String
+}
+
+type HeavenlymatchRegisterAmmount
+  @model
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  registerAmmount: Int
+  type: String!
+    @index(
+      name: "heavenlymatchRegisterAmmountByDate"
+      queryField: "listHeavenlymatchRegisterAmmountByDate"
+      sortKeyFields: ["createdAt"]
+    )
+  createdAt: String!
+}
+
+type HeavenlymatchFCMToken
+  @model
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  userId: ID
+  token: String
+}
+
+type HeavenlymatchNotification
+  @model
+  @auth(
+    rules: [{ allow: public, operations: [create, read, update, delete] }]
+  ) {
+  id: ID!
+  userId: ID
+  triggeredUser: String
+  title: String
+  body: String
+  action: ActionsEnum
+  userMediaFiles: [HeavenlymatchUserMediaFiles]
+    @hasMany(indexName: "byMedia", fields: ["userId"])
+  type: String!
+    @index(
+      name: "heavenlymatchNotificationsByDate"
+      queryField: "listHeavenlymatchNotificationsByDate"
+      sortKeyFields: ["createdAt"]
+    )
+  createdAt: String!
+}
+
+enum ActionsEnum {
+  chat
+  match
+  request
+  announcement
+  profile
+  payment
+}

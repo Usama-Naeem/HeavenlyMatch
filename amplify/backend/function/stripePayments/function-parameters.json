@@ -1,0 +1,55 @@
+{
+  "permissions": {
+    "storage": {
+      "HeavenlymatchUsers:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "HeavenlymatchPayments:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "HeavenlymatchRegisterAmmount:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "HeavenlymatchFCMToken:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "HeavenlymatchNotification:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "stripeSecretKey",
+      "environmentVariableName": "STRIPE_SECRET_KEY"
+    },
+    {
+      "cloudFormationParameterName": "sesPublicKey",
+      "environmentVariableName": "SES_PUBLIC_KEY"
+    },
+    {
+      "cloudFormationParameterName": "sesSecretKey",
+      "environmentVariableName": "SES_SECRET_KEY"
+    },
+    {
+      "cloudFormationParameterName": "sesSenderEmail",
+      "environmentVariableName": "SES_SENDER_EMAIL"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "resourceName": "heavenlyMatchStorage",
+  "policyUUID": "22467737",
+  "bucketName": "heavenlymatchstorage",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}

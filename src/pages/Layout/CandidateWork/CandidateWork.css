@@ -1,0 +1,11 @@
+.ant-radio-checked .ant-radio-inner {
+  border-color: #cc5869 !important ;
+}
+
+.ant-radio-checked .ant-radio-inner:after {
+  background-color: #cc5869;
+}
+
+.ant-radio:hover .ant-radio-inner {
+  border-color: #cc5869;
+}

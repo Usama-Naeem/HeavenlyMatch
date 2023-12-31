@@ -1,0 +1,65 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "twilioAccountSid",
+      "environmentVariableName": "TWILIO_ACCOUNT_SID"
+    },
+    {
+      "cloudFormationParameterName": "twilioAuthToken",
+      "environmentVariableName": "TWILIO_AUTH_TOKEN"
+    },
+    {
+      "cloudFormationParameterName": "twilioApiKey",
+      "environmentVariableName": "TWILIO_API_KEY"
+    },
+    {
+      "cloudFormationParameterName": "twilioApiSecret",
+      "environmentVariableName": "TWILIO_API_SECRET"
+    },
+    {
+      "cloudFormationParameterName": "twilioChatServiceSid",
+      "environmentVariableName": "TWILIO_CHAT_SERVICE_SID"
+    },
+    {
+      "cloudFormationParameterName": "twilioAccountSid",
+      "environmentVariableName": "TWILIO_ACCOUNT_SID"
+    },
+    {
+      "cloudFormationParameterName": "twilioAuthToken",
+      "environmentVariableName": "TWILIO_AUTH_TOKEN"
+    },
+    {
+      "cloudFormationParameterName": "twilioApiKey",
+      "environmentVariableName": "TWILIO_API_KEY"
+    },
+    {
+      "cloudFormationParameterName": "twilioApiSecret",
+      "environmentVariableName": "TWILIO_API_SECRET"
+    },
+    {
+      "cloudFormationParameterName": "twilioChatServiceSid",
+      "environmentVariableName": "TWILIO_CHAT_SERVICE_SID"
+    },
+    {
+      "cloudFormationParameterName": "twilioAccountSid",
+      "environmentVariableName": "TWILIO_ACCOUNT_SID"
+    },
+    {
+      "cloudFormationParameterName": "twilioAuthToken",
+      "environmentVariableName": "TWILIO_AUTH_TOKEN"
+    },
+    {
+      "cloudFormationParameterName": "twilioApiKey",
+      "environmentVariableName": "TWILIO_API_KEY"
+    },
+    {
+      "cloudFormationParameterName": "twilioApiSecret",
+      "environmentVariableName": "TWILIO_API_SECRET"
+    },
+    {
+      "cloudFormationParameterName": "twilioChatServiceSid",
+      "environmentVariableName": "TWILIO_CHAT_SERVICE_SID"
+    }
+  ]
+}

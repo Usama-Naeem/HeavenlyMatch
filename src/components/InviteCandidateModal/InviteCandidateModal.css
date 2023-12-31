@@ -1,0 +1,31 @@
+#antDesignRadioButton .ant-radio-checked .ant-radio-inner {
+  border-color: #cc5869 !important;
+}
+
+#antDesignRadioButton .ant-radio-checked .ant-radio-inner:after {
+  background-color: #cc5869 !important;
+}
+
+#antDesignRadioButton .ant-radio:hover .ant-radio-inner {
+  border-color: #cc5869 !important;
+}
+
+#antDesignRadioButton .ant-radio-checked .ant-radio-inner:focus {
+  border-color: #cc5869 !important;
+}
+
+#antDesignRadioButton .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+  background-color: white !important;
+}
+
+.ant-modal-content {
+  border-radius: 24px !important;
+}
+
+#candidateInvite .ant-btn-default:disabled {
+  cursor: not-allowed;
+  border-color: #d9d9d9;
+  color: white !important;
+  background-color: #cc5869 !important;
+  box-shadow: none;
+}

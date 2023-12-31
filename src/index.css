@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.signin-backgroud {
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  isolation: isolate;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.0192) 100%
+  );
+  backdrop-filter: blur(43.9804px);
+}
+
+@media screen and (max-width: 767px) {
+  .signin-backgroud {
+    /* Auto layout */
+    height: 700px;
+    align-self: center;
+    justify-self: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+  }
+}
+
+.amplify-button[data-variation='primary'] {
+  background: #cc5869;
+  border: 1px solid #cc5869;
+
+  /* drop-shadow/button-primary */
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.04);
+  border-radius: 100px;
+}
+
+.amplify-input {
+  border: 1px solid #d9d9d9 !important;
+  border-radius: 100px !important;
+  color: white !important;
+}
+
+/* channging placeholder color */
+.amplify-input::-webkit-input-placeholder {
+  color: #ddd;
+}
+
+.amplify-flex.amplify-field-group.amplify-field-group--horizontal {
+  position: relative !important;
+}
+
+.amplify-field-group__outer-end {
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  height: 100% !important;
+}
+
+.amplify-field__show-password {
+  color: white !important;
+  border: 0 !important;
+}
+
+.amplify-field__show-password:focus {
+  background: none !important;
+  outline: none !important;
+  border: transparent !important;
+  box-shadow: none !important;
+}
+
+.amplify-field__show-password:hover {
+  background: none !important;
+}
+
+/* forgot password color */
+.amplify-link {
+  color: white !important;
+  text-decoration: underline !important;
+}
+
+/* back button style (forgot password)  */
+.amplify-button.amplify-field-group__control.amplify-button--link.amplify-button--small {
+  color: white !important;
+  text-decoration: underline !important;
+}
+
+.amplify-button.amplify-field-group__control.amplify-button--link.amplify-button--small:hover {
+  background: none !important;
+}
+
+.ant-layout .ant-layout-sider {
+  background: white !important;
+}
+
+a:hover {
+  color: #cc5869;
+}
+
+.ant-btn:hover {
+  color: white !important;
+  border-color: transparent !important;
+}
+
+.amplify-input::-webkit-inner-spin-button,
+.amplify-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.amplify-input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.submit-button {
+  background-color: #cc5869 !important;
+  border: 1px solid #cc5869;
+
+  /* drop-shadow/button-primary */
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.04);
+  border-radius: 100px;
+}
+
+.form-input {
+  border: 1px solid #d9d9d9 !important;
+  border-radius: 100px !important;
+  color: white !important;
+  background: none !important;
+}
+
+.forgot-password-link {
+  text-decoration: underline !important;
+  color: white;
+  background-color: transparent !important;
+}
+
+.new-signin-backgroud {
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  isolation: isolate;
+  width: 50%;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.0192) 100%
+  );
+  backdrop-filter: blur(43.9804px);
+}
+
+@media screen and (max-width: 767px) {
+  .new-signin-backgroud {
+    /* Auto layout */
+    height: 600px;
+    align-self: center;
+    justify-self: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    width: 100%;
+  }
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: red !important;
+  border-color: red !important;
+}

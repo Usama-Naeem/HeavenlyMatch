@@ -1,0 +1,8 @@
+#side-menu>.ant-menu>.ant-menu-item-selected {
+  color: #CC5869;
+  background: #FFF0F0;
+}
+
+#side-menu > .ant-btn-primary:not(:disabled):hover{
+  background-color: #ce7784;
+}

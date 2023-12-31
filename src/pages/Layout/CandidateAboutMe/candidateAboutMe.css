@@ -1,0 +1,32 @@
+.css-olqui2-singleValue {
+  font-weight: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0;
+  line-height: 38px;
+  transition: all 0.3s;
+  color: rgba(0, 0, 0, 0.25) !important;
+  font-size: 16px;
+  margin: 0;
+}
+
+#antDesignRadioButton .ant-radio-checked .ant-radio-inner {
+  border-color: #cc5869 !important;
+}
+
+#antDesignRadioButton .ant-radio-checked .ant-radio-inner:after {
+  background-color: #cc5869 !important;
+}
+
+#antDesignRadioButton .ant-radio:hover .ant-radio-inner {
+  border-color: #cc5869 !important;
+}
+
+#antDesignRadioButton .ant-radio-checked .ant-radio-inner:focus {
+  border-color: #cc5869 !important;
+}
+
+#antDesignRadioButton .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+  background-color: white !important;
+}

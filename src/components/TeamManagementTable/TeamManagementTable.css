@@ -1,0 +1,27 @@
+#teamManegementTable > div > .ant-table-wrapper > .ant-spin-nested-loading > .ant-spin-container .ant-pagination a{
+  color: #CC5869;
+}
+
+#teamManegementTable > div > .ant-table-wrapper > .ant-spin-nested-loading > .ant-spin-container .ant-pagination .ant-pagination-item-active{
+ border-color: #CC5869;
+}
+
+#teamManegementTable > div > div > .ant-btn{
+  background-color: #CC5869;
+}
+
+#teamManegementTable > div > div > .ant-btn:hover{
+  background-color: #cf808c;
+}
+
+#teamManegementTable > div > div > .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover{
+  border-color: #CC5869;
+}
+
+#teamManegementTable > div > div > .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):focus{
+  border-color: #CC5869;
+}
+
+#teamManegementTable > div > div > .ant-input-affix-wrapper-focused{
+  border-color: #CC5869;
+}
